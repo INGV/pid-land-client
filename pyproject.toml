@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pidland-client"
+version = "0.1.0"
+description = "Download waveform data from PID-defined datasets (DOI/Handle) and optionally convert to SAC"
+readme = "README.md"
+requires-python = ">=3.9"
+
+authors = [
+  { name = "Massimo Fares", email = "massimo.fares@ingv.it" },
+  { name = "ONT-INGV-EIDA Team", email = "adaisacd.ont@ingv.it" }
+]
+
+license = { text = "GPLv3" }
+
+keywords = ["seismology", "waveform", "PID", "FAIR", "RO-Crate", "miniSEED", "SAC"]
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Operating System :: OS Independent",
+  "Topic :: Scientific/Engineering"
+]
+
+dependencies = [
+  "aiohttp",
+  "aiofiles",
+  "obspy"
+]
+
+[project.urls]
+Homepage = "https://gitlab.rm.ingv.it/UF3/pidland-downloader"
+Repository = "https://gitlab.rm.ingv.it/UF3/pidland-downloader"
+
+[project.scripts]
+pidland-fetch = "pidland_downloader.cli:main"
+pidland-plot = "pidland_downloader.cli:plot_main"
+
+[tool.setuptools.packages.find]
+where = ["."]
