@@ -32,7 +32,7 @@ pip install -U pip
 
 ```bash
 git clone https://github.com/INGV/pid-land-client.git
-cd pidland-downloader
+cd pid-land-client
 pip install .
 ```
 
